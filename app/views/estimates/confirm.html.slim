@@ -1,12 +1,13 @@
 br
-  =image_tag 'contact.gif', width: '100%'
+  =image_tag 'contact.webp', width: '100%'
 
 
 = form_for(@estimate, url: { action: :thanks }) do |f|
   .tops-wrapper
     h2.heading
-      span> お見積もり内容確認
-      | フォーム
+      span> 社会保険適正化
+      | 無料見積内容確認
+    br
     table.company
       colgroup
         col width="10%" /
@@ -64,59 +65,47 @@ br
         td
           strong.label 必須
         td.arrow_box
-          | アポ取りを行う商材
+          | いずれか1名の月額役員報酬
         td
-          = f.hidden_field :business
-          = @estimate.business
+         = f.hidden_field :saraly_month
+         = @estimate.saraly_month
       tr
         td
           strong.label 必須
         td.arrow_box
-          | 月間アポ希望件数
+          | いずれか1名の年間役員報酬
         td
-          = f.hidden_field :number
-          = @estimate.number
+         = f.hidden_field :saraly_year
+         = @estimate.saraly_year
       tr
         td
           strong.label 必須
         td.arrow_box
-          | 開始時期
+          | 今回申請したい役員人数
         td
-          = f.hidden_field :start
-          = @estimate.start
-      tr
-        td
-          strong.label.label-blue 任意
-        td.arrow_box
-          | ターゲット先業種
-        td
-          = f.hidden_field :target_industry
-          = @estimate.target_industry
-      tr
-        td
-          strong.label.label-blue 任意
-        td.arrow_box
-          | ターゲット先人数規模
-        td
-          = f.hidden_field :target_employment
-          = @estimate.target_employment
+          = f.hidden_field :target
+          = @estimate.target
       tr
         td
           strong.label 必須
         td.arrow_box
-          | 商材ファイル添付
+          | 決算月
         td
-          = f.hidden_field :document_1
-          = @estimate.document_1.to_s
-          = f.hidden_field :document_2
-          = @estimate.document_2.to_s
-          = f.hidden_field :document_3
-          = @estimate.document_3.to_s
+         = f.hidden_field :fiscal_year
+         = @estimate.fiscal_year
       tr
         td
-          strong.label.label-blue 任意
+          strong.label 必須
         td.arrow_box
-          | その他商材に関する情報
+          | 導入時期
+        td
+          = f.hidden_field :period
+          = @estimate.period
+      tr
+        td
+          strong.label.label-blue.label-blue 任意
+        td.arrow_box
+          | 備考
         td
           = f.hidden_field :remarks
           = @estimate.remarks

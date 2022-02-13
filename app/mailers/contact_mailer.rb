@@ -1,9 +1,9 @@
 class ContactMailer < ActionMailer::Base
-  default from: "mail@app-sc.jp"
+  default from: "cost@comicomi.cc"
   def received_email(contact)
     @contact = contact
-    mail to: "mail@app-sc.jp"
-    mail(subject: 'Ri-Novasよりお問い合わせがありました') do |format|
+    mail to: "cost@comicomi.cc"
+    mail(subject: '社会保険適正化コンサルティングよりお問い合わせがありました') do |format|
       format.text
     end
   end
@@ -11,7 +11,7 @@ class ContactMailer < ActionMailer::Base
   def send_email(contact)
     @contact = contact
     mail to: contact.email
-    mail(subject: 'Ri-Novasにお問い合わせ頂きありがとうございます｜Ri-Novas') do |format|
+    mail(subject: '社会保険適正化コンサルティングにお問い合わせ頂きありがとうございます｜Ri-Novas') do |format|
       format.text
     end
   end

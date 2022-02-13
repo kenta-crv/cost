@@ -1,5 +1,5 @@
 class EstimateMailer < ActionMailer::Base
-  default from: "info@ri-plus.jp"
+  default from: "cost@comicomi.cc"
   #default to: @estimate.email
 
   #def send_when_admin_reply(estimate) #メソッドに対して引数を設定
@@ -10,8 +10,8 @@ class EstimateMailer < ActionMailer::Base
 
   def received_email(estimate)
     @estimate = estimate
-    mail to: "info@ri-plus.jp"
-    mail(subject: 'アポトルよりお問い合わせがありました') do |format|
+    mail to: "cost@comicomi.cc"
+    mail(subject: '社会保険適正化コンサルティングよりお問い合わせがありました') do |format|
       format.text
     end
   end
@@ -19,7 +19,7 @@ class EstimateMailer < ActionMailer::Base
   def send_email(estimate)
     @estimate = estimate
     mail to: estimate.mail
-    mail(subject: 'お問い合わせ頂きありがとうございます｜株式会社Ri-Plus') do |format|
+    mail(subject: 'お問い合わせ頂きありがとうございます｜社会保険適正化コンサルティング') do |format|
       format.text
     end
   end
